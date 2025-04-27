@@ -76,9 +76,13 @@ void Versicherer::dialog() {
         break;
 
         case '3':{
-            for (size_t i = 0; i < versicherungen.size(); i++) {
-                versicherungen[i]->anzeigen();
-                cout << "----------------------------------------------" << endl;
+            if(versicherungen.empty()) {
+                cout << "Noch keine Versicherungen gespeichert!" << endl;
+            } else {
+                for (size_t i = 0; i < versicherungen.size(); i++) {
+                    versicherungen[i]->anzeigen();
+                    cout << "----------------------------------------------" << endl;
+                }
             }
         }
         break;
